@@ -48,3 +48,9 @@ class Place(object):
             state=self.state,
             zip=self.zip
         )
+
+    def __unicode__(self):
+        return self.singleline
+
+    def __repr__(self):
+        return self.__unicode__()

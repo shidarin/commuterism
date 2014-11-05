@@ -20,3 +20,10 @@ class Trip(object):
     @property
     def end(self):
         return self._end
+
+    def __unicode__(self):
+        return u'{start_time}: {duration} from {beg}'.format(
+            start_time=self.start_time,
+            duration=self.duration,
+            beg=self.beginning,
+        )
