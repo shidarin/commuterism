@@ -20,12 +20,29 @@ class Place(object):
         return self._address_2
 
     @property
+    def address_list(self):
+        address_list = [
+            self.address_1,
+            self.city,
+            self.state,
+            self.zip
+        ]
+        if self.address_2:
+            address_list.insert(1, self.address_2)
+
+        return address_list
+
+    @property
     def city(self):
         return self._city
 
     @property
     def state(self):
         return self._state
+
+    @property
+    def url(self):
+        return '+'.join(self.address_list)
 
     @property
     def zip(self):
